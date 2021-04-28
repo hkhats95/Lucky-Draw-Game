@@ -8,6 +8,8 @@ A service which allows users to get Lucky Draw Raffle tickets and use one lucky 
 * An API which allows users to participate in the game.
 * An API which lists all the winners of all the events in the last one week.
 * An API which computes the winner for the event and announce the winner.
+* An API to create new events by admin user.
+* An API to show the events that needs to be closed.
 
 ## Setup Guide
 1. Python v3.8.7
@@ -49,13 +51,11 @@ A service which allows users to get Lucky Draw Raffle tickets and use one lucky 
     python manage.py runserver
     ```
 
-## Points to be noted.
-* Right now you can create lucky draw events from the admin portal only.
-* You must know the id of the lucky draw event you want to end and declare winners.
+
 
 ## To Do
-* An API to create new events by admin user.
-* An API to show the events that needs to be closed.
+* ~~An API to create new events by admin user.~~
+* ~~An API to show the events that needs to be closed.~~
 
 ## Documentation
 Read the [docs].

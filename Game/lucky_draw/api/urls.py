@@ -16,4 +16,6 @@ urlpatterns = [
 	path('events/<int:pk>/participate', views.participateInLuckyDraw, name='participate-in-lucky-draw'),
 	path('events/winners/lastweek', views.lastWeekWinners, name='last-week-winners'),
 	path('events/<int:pk>/close', views.closeEvent, name='close-event'),
+    path('events/toclose', views.eventToClose, name='to-close-events'),
+    path('events/create', views.eventCreate, name='create-event'),
 ]

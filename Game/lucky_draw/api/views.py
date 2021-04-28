@@ -145,6 +145,40 @@ def lastWeekWinners(request):
     return Response(serializer.data)
 
 
+# View for showing the events waiting to be closed
+@api_view(['GET',])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAdminUser])
+def eventToClose(request):
+    """
+    API endpoint to show the events that are waiting to be closed as their enddate has surpassed. (Only Admin users allowed.)
+    """
+    events = LuckyDraw.objects.filter(live=True, enddate__lte=timezone.now())
+    serializer = LuckyDrawSerializer(events, many=True)
+    if len(serializer.data)>0:
+        return Response(serializer.data)
+    else:
+        data = {}
+        data['message'] = "Currently no event waiting to be closed."
+        return Response(data)
+
+
+# View for creating lucky draw events
+@api_view(['POST',])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAdminUser])
+def eventCreate(request):
+    """
+    API endpoint to create new lucky draw events. (Only Admin users allowed.)
+    """
+    new_event = LuckyDraw()
+    serializer = LuckyDrawSerializer(new_event, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 # View for closing the event and declaring winners
 @api_view(['POST',])
 @authentication_classes([TokenAuthentication])
