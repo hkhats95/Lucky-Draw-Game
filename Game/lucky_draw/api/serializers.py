@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, RaffleTicket, LuckyDraw
+from lucky_draw.models import User, RaffleTicket, LuckyDraw
 
 
 class UserSerializer(serializers.ModelSerializer):

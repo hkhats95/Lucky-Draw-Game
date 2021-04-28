@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('lucky_draw.urls')),
+    # path('', include('lucky_draw.urls')),
     path('api-auth/', include('rest_framework.urls')),
+    path('api/', include('lucky_draw.api.urls'))
 ]
