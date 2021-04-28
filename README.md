@@ -13,17 +13,25 @@ A service which allows users to get Lucky Draw Raffle tickets and use one lucky 
 1. Python v3.8.7
 2. Clone this repository.
 
-    `git clone https://github.com/hkhats95/Lucky-Draw-Game.git`
+    ```
+    git clone https://github.com/hkhats95/Lucky-Draw-Game.git
+    ```
 
 3. Create a virtural environment and activate it.
 
-    `python -m venv env`
+    ```
+    python -m venv env
+    ```
 
-    `env\Scripts\activate.bat`
+    ```
+    env\Scripts\activate.bat
+    ```
 
 4. Install the requirements.
 
-    `pip install -r requirements.txt`
+    ```
+    pip install -r requirements.txt
+    ```
 
 5. Thats all Folks.
 
@@ -31,11 +39,15 @@ A service which allows users to get Lucky Draw Raffle tickets and use one lucky 
 ## How to Run
 1. It is recommneded to create super user from command line to access `/admin` portal.
 
-    `python manage.py createsuperuser`
+    ```
+    python manage.py createsuperuser
+    ```
 
 2. Run the server.
 
-    `python manage.py runserver`
+    ```
+    python manage.py runserver
+    ```
 
 ## Points to be noted.
 * Right now you can create lucky draw events from the admin portal only.
